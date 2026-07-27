@@ -15,7 +15,7 @@ public class EmailServiceImpl implements EmailService{
 	JavaMailSender javaMailSender;
 	
 	@Override
-	public void mail(AccountDetails accountDetails) {
+	public void mail(AccountDetails accountDetails,String tempPassword) {
 		 SimpleMailMessage mail = new SimpleMailMessage();
 		  mail.setFrom("manikumar052002@gmail.com");
 		  mail.setTo(accountDetails.getCustomer().getEmail());
@@ -25,7 +25,7 @@ public class EmailServiceImpl implements EmailService{
 		  		"We are pleased to inform you that your bank account has been successfully created.\n"+
 		  		"Your account details are:\n"+
 		  		"Account Number: "+ accountDetails.getAccountNumber()+"\n"+
-		  		"Temporary Password: "+ accountDetails.getPassword()+"\n"+
+		  		"Temporary Password: "+ "\n"+ tempPassword+ "\n"+
 		  		"Please use these credentials to log in to your account.\n\n"+
 		  		"For security purposes, you are required to change your temporary password after your first login.\n\n"+
 		  		"If you did not request this account, please contact our support team immediately.\n\n"+

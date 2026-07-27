@@ -19,6 +19,7 @@ public class CustomerBuilders {
 	@Autowired
 	PasswordGenerator passwordGenerator;
 
+
 	public static CustomerDetails buildCustomerDetails(CreateAccountRequestDTO createAccountRequestDTO) {
 		return CustomerDetails.builder()
 				.name(createAccountRequestDTO.getName())
@@ -31,7 +32,7 @@ public class CustomerBuilders {
 	}
 	
     public AccountDetails buildAccountDetails() {
-				return AccountDetails.builder()
+		return AccountDetails.builder()
 						.accountNumber(accNumGenerator.generateAccountNumber())
 						.balance(0)
 						.isFirst(true)
@@ -44,7 +45,7 @@ public class CustomerBuilders {
     public static CreateAccountResponseDTO buildAccountResponse(AccountDetails accountDetails) {
     	return CreateAccountResponseDTO.builder()
     			.accountNumber(accountDetails.getAccountNumber())
-    			.password(accountDetails.getPassword())
+    			.message("Account created successfully. Temporary password has been sent to the registered email.")
     			.email(accountDetails.getCustomer().getEmail())
     			.customerName(accountDetails.getCustomer().getName())
     			.build();

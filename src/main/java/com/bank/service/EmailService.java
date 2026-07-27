@@ -7,6 +7,6 @@ import com.bank.model.AccountDetails;
 @Service
 public interface EmailService {
 
-	public void mail(AccountDetails accountDetails);
+	public void mail(AccountDetails accountDetails,String tempPassword);
 
 }

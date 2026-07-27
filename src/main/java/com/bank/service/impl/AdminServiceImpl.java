@@ -1,6 +1,7 @@
 package com.bank.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.bank.builders.CustomerBuilders;
@@ -30,6 +31,9 @@ public class AdminServiceImpl implements AdminService{
 	
 	@Autowired
 	CustomerBuilders customerBuilder;
+	
+	@Autowired
+	PasswordEncoder passEncoder;
 
 	@Override
 	public CreateAccountResponseDTO createAccount(CreateAccountRequestDTO createAccountDTO) {
@@ -37,8 +41,11 @@ public class AdminServiceImpl implements AdminService{
 		CustomerDetails savedCustomer = customerDetailsRepo.save(customerDetails);
 		AccountDetails accountDetails = customerBuilder.buildAccountDetails();
 		  accountDetails.setCustomer(savedCustomer);
+		  String password = accountDetails.getPassword();
+	   	  String encodedPassword = passEncoder.encode(password);
+		  accountDetails.setPassword(encodedPassword);
 		  AccountDetails savedAccountDetails = accountDetailsRepo.save(accountDetails);
-		 emailService.mail(savedAccountDetails);
+		 emailService.mail(savedAccountDetails,password);
 		return CustomerBuilders.buildAccountResponse(savedAccountDetails);
 	}
 

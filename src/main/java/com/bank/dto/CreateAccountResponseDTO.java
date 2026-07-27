@@ -15,7 +15,7 @@ public class CreateAccountResponseDTO {
 	
     private long accountNumber;
     
-    private String password;
+    private String message;
     
     private String email;
 
