@@ -8,4 +8,5 @@ import com.bank.model.CustomerDetails;
 @Repository
 public interface CustomerDetailsRepository extends JpaRepository<CustomerDetails, Integer>{
 
+	public CustomerDetails findCustomerDetailsByName(String name);
 }

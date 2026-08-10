@@ -1,0 +1,50 @@
+.parent{
+    display: flex;
+    background-color: cornsilk;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-radius: 20px;
+}
+body {
+    margin: 50;
+}
+.parent h1{
+    font-size: large;
+    color: black;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.fulldiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    background-color: darkkhaki;
+    color: black;
+    font-size: large;
+    padding: 30px 20px;
+    border-radius: 40px;
+    margin-right: 20%;
+}
+.parentbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    padding-bottom: 20px;
+}
+div button{
+    color: black;
+    background-color: lightgreen;
+    border-radius: 20px;
+}
+div button:hover{
+    background-color: darkgreen;
+}

@@ -10,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,7 +29,7 @@ public class TransactionDetails {
 		@Column(name="transaction_type",nullable = false)
 		private String transactionType;
 		
-		@Min(value = 0, message = "Transaction amount must be greater than zero")
+//		@Min(value = 0, message = "Transaction amount must be greater than zero")
 		@Column(name="transaction_amount",nullable = false)
 		private int transactionAmount;
 		
@@ -47,8 +46,7 @@ public class TransactionDetails {
 		@Column(nullable = false)
 		private int credit;
 		
-		public TransactionDetails(String transactionType,
-			@Min(value = 0, message = "Transaction amount must be greater than zero") int transactionAmount,
+		public TransactionDetails(String transactionType,int transactionAmount,
 				AccountDetails account, LocalDate transactionDate, int debit, int credit) {
 			super();
 			this.transactionType = transactionType;

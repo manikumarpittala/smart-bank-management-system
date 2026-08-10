@@ -37,4 +37,26 @@ public class EmailServiceImpl implements EmailService{
 		  javaMailSender.send(mail);
 	}
 
+	@Override
+	public void otpMail(int otp,String email) {
+		 SimpleMailMessage mail = new SimpleMailMessage();
+		  mail.setFrom("manikumar052002@gmail.com");
+		  mail.setTo(email);
+		  mail.setSubject("Login OTP");
+		  mail.setText("Dear Customer,\n\n"
+		  		+ "\n\n"
+		  		+ "Your One-Time Password (OTP) for Smart Bank login is:\n\n"
+		  		+ "\n\n"
+		  		+ otp+"\n\n"
+		  		+ "\n\n"
+		  		+ "This OTP is valid for 5 minutes.\n\n"
+		  		+ "\n\n"
+		  		+ "Please do not share this OTP with anyone. Smart Bank will never ask for your OTP.\n\n"
+		  		+ "\n\n"
+		  		+ "Thank you,\n\n"
+		  		+ "Smart Bank Team");
+		  mail.setCc("mmanikumar8360@gmail.com");
+		  javaMailSender.send(mail);
+	}
+
 }

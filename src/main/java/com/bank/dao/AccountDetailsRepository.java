@@ -10,5 +10,7 @@ public interface AccountDetailsRepository extends JpaRepository<AccountDetails, 
 
 	public AccountDetails findByAccountNumber(long accNum);
 	
-	public AccountDetails findAccountDetailsByAccountNumber(long accNum);
+//	public AccountDetails findAccountDetailsByAccountNumber(long accNum);
+	
+	public AccountDetails findByCustomerEmail(String email);
 }

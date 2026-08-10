@@ -1,6 +1,6 @@
 package com.bank.model;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,7 +26,7 @@ public class OTP {
 		private int otpId;
 		
 		@Column(name = "otp_value", nullable = false)
-		private String otpValue;
+		private int otpValue;
 		
 		@ManyToOne
 		@JoinColumn(name = "account_id", nullable = false)
@@ -36,16 +36,16 @@ public class OTP {
 		private String email;
 		
 		@Column(name = "issued_time", nullable = false)
-		private LocalTime issuedTime;
+		private LocalDateTime issuedTime;
 		
 		@Column(name = "expiration_time", nullable = false)
-		private LocalTime expirationTime;
+		private LocalDateTime expirationTime;
 		
 		@Column(name = "is_valid", nullable = false)
 		private boolean isValid;
 
-		public OTP(String otpValue, AccountDetails account, String email, LocalTime issuedTime,
-				LocalTime expirationTime, boolean isValid) {
+		public OTP(int otpValue, AccountDetails account, String email, LocalDateTime issuedTime,
+				LocalDateTime expirationTime, boolean isValid) {
 			super();
 			this.otpValue = otpValue;
 			this.account = account;

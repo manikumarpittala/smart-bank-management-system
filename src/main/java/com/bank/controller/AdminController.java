@@ -22,4 +22,4 @@ public class AdminController {
 		return adminService.createAccount(createAccountDTO);
 		}
 		
-		}
+}

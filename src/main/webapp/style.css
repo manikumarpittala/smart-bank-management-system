@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(111, 179, 156);
+    width: 90vw;
+}
+ div h1{
+    color: white;
+ }
+ div button{
+    border-radius: 10px;
+    color: white;
+    background-color: green;
+ }
+.parent{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   text-decoration: none;
+} 
+.child{
+   row-gap: 10px;
+   gap: 10%;
+}
+#image img {
+    /* border-radius: 20px; */
+    width: 90vw;
+}
+

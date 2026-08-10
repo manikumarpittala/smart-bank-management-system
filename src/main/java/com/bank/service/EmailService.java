@@ -8,5 +8,7 @@ import com.bank.model.AccountDetails;
 public interface EmailService {
 
 	public void mail(AccountDetails accountDetails,String tempPassword);
+	
+	public void otpMail(int otp,String email);
 
 }
