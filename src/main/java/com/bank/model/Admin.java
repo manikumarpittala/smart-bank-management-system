@@ -37,6 +37,9 @@ public class Admin {
 	
     @Column(name = "created_at", nullable = false)
 	private LocalDate createdAt;
+    
+    @Column(name="secret_key", nullable= false)
+    private String secretKey;
 
 	public Admin(String name, String email, String password, String role, boolean isActive, LocalDate createdAt) {
 		super();

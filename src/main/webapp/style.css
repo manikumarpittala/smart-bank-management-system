@@ -15,7 +15,10 @@ nav{
  div button{
     border-radius: 10px;
     color: white;
-    background-color: green;
+    background-color:lightgreen;
+ }
+ div button:hover{
+   background-color:green;
  }
 .parent{
    display: flex;

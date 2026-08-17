@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,7 +29,7 @@ public class OTP {
 		@Column(name = "otp_value", nullable = false)
 		private int otpValue;
 		
-		@ManyToOne
+		@ManyToOne(fetch = FetchType.LAZY)
 		@JoinColumn(name = "account_id", nullable = false)
 		private AccountDetails account;
 		

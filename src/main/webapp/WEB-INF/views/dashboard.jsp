@@ -8,6 +8,16 @@
  <link rel="stylesheet"  href="/css/dashboard.css">
 </head>
 <body>
-  <h1>Welcome to DashBoard</h1> 
+  <div>
+   <h1>Welcome to DashBoard</h1> 
+ </div>
+  <div>
+    <a href="/admin/createaccount">Create An Account</a><br><br>
+    <a href="/admin/viewcustomers">View All Customers</a><br><br>
+    <a href="/admin/viewaccounts">View All Accounts</a><br><br>
+    <a href="/admin/logout">
+      <button>Logout</button>
+    </a>
+  </div>
 </body>
 </html>

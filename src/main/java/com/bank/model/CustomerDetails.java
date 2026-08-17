@@ -9,13 +9,15 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "customer_details")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -58,6 +60,14 @@ public class CustomerDetails {
 			this.email = email;
 			this.account = account;
 		}
+
+		@Override
+		public String toString() {
+			return "CustomerDetails [customerId=" + customerId + ", name=" + name + ", aadharNumber=" + aadharNumber
+					+ ", panNumber=" + panNumber + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email="
+					+ email + "]";
+		}
 	
+		
 	    
 }
