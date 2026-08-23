@@ -32,10 +32,10 @@ public class ValidationController {
 	                    HttpSession session) {
 
 		AccountDetails account = validServ.login(accountNumber, password);
-           session.setAttribute("account", account);
 	    if (account != null ) {
+//	    	session.setAttribute("account", account);
 	        session.setAttribute("accountNumber", accountNumber);
-	        session.setAttribute("password", password);
+	        
            
 	        return "loginwithotp";
 	    }
@@ -44,13 +44,15 @@ public class ValidationController {
 	    return "accountinactive";
 	}
 	
+	
 	@PostMapping("/verifyOtp")
-	public String verifyOTP(@RequestParam int otp,@RequestParam long accountNumber) {
+	public String verifyOTP(@RequestParam int otp,@RequestParam long accountNumber,HttpSession session) {
 		if(validServ.verifyOTP(otp,accountNumber).equals("resetpassword")) {
 			return "resetpassword";
 		}
 		else if(validServ.verifyOTP(otp,accountNumber).equals("directlogin")) {
-			return "dashboard";
+			session.setAttribute("freshAccountNumber", accountNumber);
+			return "redirect:/customer/dashboard";
 		}
 		return "invalid";
 	}
@@ -80,5 +82,6 @@ public class ValidationController {
         	 return "new password and old password are not same";
          }
 	}
+	
 	
 }
