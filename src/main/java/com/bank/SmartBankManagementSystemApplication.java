@@ -11,5 +11,6 @@ public class SmartBankManagementSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SmartBankManagementSystemApplication.class, args); 
          
+
 	}
 }

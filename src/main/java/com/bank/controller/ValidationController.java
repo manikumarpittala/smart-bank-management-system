@@ -3,6 +3,7 @@ package com.bank.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +34,7 @@ public class ValidationController {
 
 		AccountDetails account = validServ.login(accountNumber, password);
 	    if (account != null ) {
-//	    	session.setAttribute("account", account);
+	    	session.setAttribute("account", account);
 	        session.setAttribute("accountNumber", accountNumber);
 	        
            
@@ -74,10 +75,11 @@ public class ValidationController {
 	}
 	
 	@PostMapping("/resetpassword")
-	public String changePassword(@RequestParam String oldPassword,@RequestParam String newPassword,@RequestParam String confirmPassword,HttpSession session) {
-		long attribute = (long) session.getAttribute("accountNumber");
-         if(validServ.changePassword(attribute, oldPassword, newPassword, confirmPassword).equals("done")){
-        	 return "dashboard";
+	public String changePassword(@RequestParam String oldPassword,@RequestParam String newPassword,@RequestParam String confirmPassword,HttpSession session,Model model) {
+		AccountDetails account = (AccountDetails) session.getAttribute("account");
+		model.addAttribute("account", account);
+         if(validServ.changePassword(account.getAccountNumber(), oldPassword, newPassword, confirmPassword).equals("done")){
+        	 return "redirect:/customer/dashboard";
          }else {
         	 return "new password and old password are not same";
          }

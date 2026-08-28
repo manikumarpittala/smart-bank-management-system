@@ -14,15 +14,9 @@ public class CustomerDashboardServiceImpl implements CustomerDashboardService{
 	AccountDetailsRepository accountRepo;
 	
 	@Override
-	public AccountDetails dashboard(long accountNumber) {
+	public AccountDetails accountDetails(long accountNumber) {
       AccountDetails accountDetails = accountRepo.findByAccountNumber(accountNumber);
 		return accountDetails;
 	}
-
-	
-	
-	
-	
-	
 
 }

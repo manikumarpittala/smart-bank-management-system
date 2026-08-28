@@ -67,7 +67,8 @@ public class ValidationServiceImpl implements ValidationService{
 	@Override
 	public String changePassword(long accountNumber, String oldPassword, String newPassword, String confirmPassword) {
 		AccountDetails byAccountNumber = accountDetRepo.findByAccountNumber(accountNumber);
-		if(byAccountNumber.getPassword().equals(oldPassword) && newPassword.equals(confirmPassword)) {
+		boolean matches = passEnco.matches(oldPassword,byAccountNumber.getPassword());
+		if(matches && newPassword.equals(confirmPassword)) {
 			@Nullable
 			String encodedPassword = passEnco.encode(newPassword);
 			byAccountNumber.setPassword(encodedPassword);

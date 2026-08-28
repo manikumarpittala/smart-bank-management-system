@@ -4,5 +4,6 @@ import com.bank.model.AccountDetails;
 
 public interface CustomerDashboardService {
 
-	public AccountDetails dashboard(long accountNumber);
+	public AccountDetails accountDetails(long accountNumber);
+	
 }

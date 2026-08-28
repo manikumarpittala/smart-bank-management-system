@@ -13,12 +13,10 @@
    <% AccountDetails account = (AccountDetails) session.getAttribute("freshAccountDetails");
    CustomerDetails cust =account.getCustomer();%>
    <h1>Hi <%= cust.getName() %></h1>
-   <h3>Account Number:<%= account.getAccountNumber() %></h3>
-   <h3>Current Balance:<details>
-    <summary>Show Balance</summary>
-    <b><%= account.getBalance() %></b>
-   </details></h3>
-   <h3>Account Status:<%= account.isActive() %></h3>
+   <a href="/customer/accountdetails">Account Details</a><br><br>
+   <a href="/customer/transfermoney">Transfer Money</a><br><br>
+   <a href="/customer/transactions">Transactions</a><br><br>
+   <a href="/customer/changepassword">ChangePassword</a><br><br>   
    <a href="/customer/logout">
       <button>Logout</button>
     </a>
