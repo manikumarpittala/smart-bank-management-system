@@ -81,6 +81,4 @@ public class AccountDetails {
 		this.customer = customer;
 	}
     
-    
-    
 }

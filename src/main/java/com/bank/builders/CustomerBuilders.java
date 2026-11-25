@@ -20,16 +20,16 @@ public class CustomerBuilders {
 	PasswordGenerator passwordGenerator;
 
 
-	public static CustomerDetails buildCustomerDetails(CreateAccountRequestDTO createAccountRequestDTO) {
-		return CustomerDetails.builder()
-				.name(createAccountRequestDTO.getName())
-				.aadharNumber(createAccountRequestDTO.getAadharNumber())
-				.panNumber(createAccountRequestDTO.getPanNumber())
-				.address(createAccountRequestDTO.getAddress())
-				.phoneNumber(createAccountRequestDTO.getPhoneNumber())
-				.email(createAccountRequestDTO.getEmail())
-				.build();		
-	}
+//	public static CustomerDetails buildCustomerDetails(CreateAccountRequestDTO createAccountRequestDTO) {
+//		return CustomerDetails.builder()
+//				.name(createAccountRequestDTO)
+//				.aadharNumber(createAccountRequestDTO.getAadharNumber())
+//				.panNumber(createAccountRequestDTO.getPanNumber())
+//				.address(createAccountRequestDTO.getAddress())
+//				.phoneNumber(createAccountRequestDTO.getPhoneNumber())
+//				.email(createAccountRequestDTO.getEmail())
+//				.build();		
+//	}
 	
     public AccountDetails buildAccountDetails() {
 		return AccountDetails.builder()
@@ -51,4 +51,15 @@ public class CustomerBuilders {
     			.build();
 
     }
+
+	public static CustomerDetails buildCustomerDetails(CreateAccountRequestDTO createAccountDTO) {
+//	          return CustomerDetails.builder()
+//				.aadharNumber(createAccountDTO.getAadharNumber())
+//				.panNumber(createAccountDTO.getPanNumber())
+//				.address(createAccountDTO.getAddress())
+//				.phoneNumber(createAccountDTO.getPhoneNumber())
+//				.email(createAccountDTO.getEmail())
+//				.build();
+            return null;
+	}
 }

@@ -29,7 +29,6 @@ public class TransactionDetails {
 		@Column(name="transaction_type",nullable = false)
 		private String transactionType;
 		
-//		@Min(value = 0, message = "Transaction amount must be greater than zero")
 		@Column(name="transaction_amount",nullable = false)
 		private int transactionAmount;
 		

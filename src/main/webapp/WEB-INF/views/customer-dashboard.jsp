@@ -14,7 +14,7 @@
    CustomerDetails cust =account.getCustomer();%>
    <h1>Hi <%= cust.getName() %></h1>
    <a href="/customer/accountdetails">Account Details</a><br><br>
-   <a href="/customer/transfermoney">Transfer Money</a><br><br>
+   <a href="/customer/transferverify">Transfer Money</a><br><br>
    <a href="/customer/transactions">Transactions</a><br><br>
    <a href="/customer/changepassword">ChangePassword</a><br><br>   
    <a href="/customer/logout">

@@ -40,9 +40,9 @@ public class CustomerDashboardController {
          return "account-details";
 	}
 	
-	@GetMapping("/transfermoney")
+	@GetMapping("/transferverify")
 	public String transferMoney() {
-		return "transfer-money";
+		return "transfer-reverify";
 	}
 	
 	@GetMapping("/changepassword")

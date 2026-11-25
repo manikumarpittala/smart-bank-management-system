@@ -55,7 +55,7 @@ public class OTP {
 			this.expirationTime = expirationTime;
 			this.isValid = isValid;
 		} 
-		
+
 		
 		
 }

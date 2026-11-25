@@ -67,6 +67,11 @@ public class CustomerDetails {
 					+ ", panNumber=" + panNumber + ", address=" + address + ", phoneNumber=" + phoneNumber + ", email="
 					+ email + "]";
 		}
+
+		public static Object builder() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	
 		
 	    
